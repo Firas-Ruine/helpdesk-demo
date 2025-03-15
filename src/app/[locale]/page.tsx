@@ -1,12 +1,6 @@
-import {useTranslations} from 'next-intl';
-import {Link} from '@/i18n/navigation';
+import { redirect } from 'next/navigation';
+import { routesName } from '@/interfaces/routeName.interface';
  
 export default function HomePage() {
-  const t = useTranslations();
-  return (
-    <div>
-      <h1>{t('HomePage.title')}</h1>
-      <Link href="/about">{t('HomePage.about')}</Link>
-    </div>
-  );
+  redirect(routesName.login);
 }
